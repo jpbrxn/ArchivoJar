@@ -174,19 +174,14 @@ public class TestSelenium {
     @Test
     public void comprarPF() {
 
-        String category = "SPEAKERS";
-        String article = "HP Roar Mini Wireless Speaker";
-        int quantity = 10;
-        String color = "YELLOW";
-
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        driver.get("http://www.advantageonlineshopping.com/");
+        driver.get("https://biz-tm01.eastus2.cloudapp.azure.com/bizagigod/#");
 
-        headerComponent.esperarLoader();
-        headerComponent.clickLogin();
+        headerComponent.ingresarUsuario();
 
-        loginComponentPF.esperarQueCarguePopUp();
+
+       /* loginComponentPF.esperarQueCarguePopUp();
         loginComponentPF.escribirUsuario("candres");
         loginComponentPF.escribirPassword("c1234A");
         loginComponentPF.aceptarRememberMe();
@@ -204,6 +199,6 @@ public class TestSelenium {
         productComponent.selectColor(color);
         productComponent.incrementarCantidad(quantity);
         productComponent.addCart();
-        productComponent.shoppingCart(quantity);
+        productComponent.shoppingCart(quantity);*/
     }
 }

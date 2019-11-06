@@ -10,10 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HeaderComponent {
 
-    @FindBy(xpath = "//a[@id='menuUserLink']")
-    private WebElement buttonLogin;
-    @FindBy(xpath = "//div[@icon-x]")
-    private WebElement listProductCart;
+    @FindBy(id = "username")
+    private WebElement listaUsuario;
+    @FindBy(xpath = "//*[@value='domain\\gdvelez']")
+    private WebElement seleccionarUsuario;
+    @FindBy(id = "btn-login")
+    private WebElement botonIngresar;
 
     private WebDriver driver;
     private WebDriverWait wait;
@@ -24,12 +26,10 @@ public class HeaderComponent {
         PageFactory.initElements(driver, this);
     }
 
-    public void esperarLoader() {
-        wait.until(ExpectedConditions.attributeToBe(By.xpath("//div[@class='loader']"), "style", "display: none; opacity: 0;"));
-    }
-
-    public void clickLogin() {
-        buttonLogin.click();
+    public void ingresarUsuario() {
+        listaUsuario.click();
+        seleccionarUsuario.click();
+        botonIngresar.click();
     }
 
 }
